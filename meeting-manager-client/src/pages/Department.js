@@ -177,7 +177,7 @@ export default class Department extends React.Component{
             </Dialog>
 
             <Dialog visible={this.state.displayAllEmployeeDialog} modal={true} onHide={()=>this.setState({displayAllEmployeeDialog: false})} heigt={"100px"}>
-                <MultiSelect value={this.state.newEmployees} options={this.allEmployees.map(e => ({label: e.name + e.surname, value: e}))}
+                <MultiSelect value={this.state.newEmployees} options={this.allEmployees.map(e => ({label: e.name + " " + e.surname, value: e}))}
                              onChange={e => this.setState({newEmployees: e.value})}/>
                 <Button label="Add" onClick={() => this.addEmployees()}/>
             </Dialog>
