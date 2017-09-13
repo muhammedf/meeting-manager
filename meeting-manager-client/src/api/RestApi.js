@@ -11,7 +11,7 @@ class CRUDApi {
     }
 
     create(entity){
-        return request.post(this.url+"/") .set('X-API-Key', 'foobar')
+        return request.post(this.url+"/")
             .set('Accept', 'application/json').send(entity);
     }
 
@@ -24,7 +24,6 @@ class CRUDApi {
     }
 
     listall(){
-        console.log(this.url);
         return request.get(this.url+"/");
     }
 
@@ -42,6 +41,18 @@ export class DepartmentApi extends CRUDApi{
 
     constructor(baseurl){
         super(baseurl+"/department");
+    }
+
+    listEmployees(id){
+        return request.get(this.url+"/"+id+"/employee/");
+    }
+
+    addEmployee(did, eid){
+        return request.put(this.url+"/"+did+"/employee/"+eid);
+    }
+
+    removeEmployee(did, eid){
+        return request.delete(this.url+"/"+did+"/employee/"+eid);
     }
 
 }
