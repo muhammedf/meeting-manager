@@ -72,7 +72,7 @@ export class MeetingApi extends CRUDApi{
     }
 
     removeDepartment(mid, did){
-        return request.delete(this.url+"/"+mid+"/employee/"+did);
+        return request.delete(this.url+"/"+mid+"/department/"+did);
     }
 
 }
