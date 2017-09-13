@@ -27,7 +27,7 @@ public class Department implements Serializable, Identity<Long> {
 	@Column
 	private String description;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "EMP_ID")
 	private Set<Employee> employees = new HashSet<Employee>();
 

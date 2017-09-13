@@ -22,7 +22,7 @@ public class Meeting implements Serializable, Identity<Long> {
 	@Column(name = "version")
 	private int version;
 
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "MEET_DEP", joinColumns = @JoinColumn(name = "MEET_ID"), inverseJoinColumns = @JoinColumn(name = "DEP_ID"))
 	private Set<Department> departments = new HashSet<Department>();
 
