@@ -5,8 +5,10 @@ import {Column} from "primereact/components/column/Column"
 import {Button} from "primereact/components/button/Button"
 import {Dialog} from "primereact/components/dialog/Dialog"
 import {InputText} from "primereact/components/inputtext/InputText"
+import {MultiSelect} from 'primereact/components/multiselect/MultiSelect';
 
 import {DepApi} from "../api/ApiObject"
+import {EmpApi} from "../api/ApiObject";
 
 export default class Department extends React.Component{
 
@@ -17,6 +19,8 @@ export default class Department extends React.Component{
         this.delete = this.delete.bind(this);
         this.onDepSelect = this.onDepSelect.bind(this);
         this.addNew = this.addNew.bind(this);
+
+        this.allEmployees=[];
     }
 
     componentDidMount() {
@@ -65,8 +69,11 @@ export default class Department extends React.Component{
         this.newDep = false;
         this.setState({
             displayDialog:true,
-            dep: Object.assign({}, e.data)
+            dep: Object.assign({}, e.data),
+            employees: [],
         });
+        this.allEmployeesFetched=false;
+        this.myEmployeesFetched=false;
     }
 
     addNew() {
@@ -75,6 +82,43 @@ export default class Department extends React.Component{
             dep: {name:'', description: ''},
             displayDialog: true
         });
+    }
+
+    listMyEmployees(){
+        if(!this.myEmployeesFetched){
+            DepApi.listEmployees(this.state.dep.id).end((err, res) => this.setState({employees: res.body, myEmployeesFetched: true}));
+        }
+        this.setState({displayMyEmployeeDialog: true})
+    }
+
+    listAllEmployees(){
+        if(!this.allEmployeesFetched){
+            EmpApi.listall().end((err, res) => {
+                var diff = res.body.filter(x => this.state.employees.every((elem, index, array) => elem.id !=x.id));
+                window.diff=diff;
+                this.allEmployees=diff;
+                this.setState({displayAllEmployeeDialog: true});
+            });
+        }
+    }
+
+    addEmployees(){
+        let employees=this.state.employees;
+        this.state.newEmployees.forEach( ne =>
+            DepApi.addEmployee(this.state.dep.id, ne.id).end((err, res) => {
+                if(employees.every((elem, index, array) => elem.id != ne.id)) employees.push(ne);
+                this.setState({employees: employees});
+            })
+        )
+        this.setState({displayAllEmployeeDialog: false});
+    }
+
+    removeEmployees(){
+        let employees=this.state.selectedEmployees;
+        employees.forEach(e => DepApi.removeEmployee(this.state.dep.id, e.id).end((err, res) =>{
+            let i = this.state.employees.indexOf(e);
+            this.setState({employees: this.state.employees.filter(emp => emp.id != e.id)});
+        }))
     }
 
     render(){
@@ -112,10 +156,32 @@ export default class Department extends React.Component{
                             <InputText id="description" onChange={(e) => {this.updateProperty('description', e.target.value)}} value={this.state.dep.description}/>
                         </div>
                     </div>
-                    <div className="ui-grid-row">
+                    <div>
+                        {this.newDep ? null :
+                            <div>
+                                <Button label="Show Employees" onClick={()=>this.listMyEmployees()}/>
+                            </div>
+                        }
                     </div>
                 </div>}
             </Dialog>
+
+            <Dialog visible={this.state.displayMyEmployeeDialog} modal={true} onHide={() => this.setState({displayMyEmployeeDialog: false})}>
+                <DataTable value={this.state.employees} selectionMode="multiple" selection={this.state.selectedEmployees}
+                           onSelectionChange={(e) => this.setState({selectedEmployees: e.data})}>
+                    <Column field="name" header="Name"/>
+                    <Column field="surname" header="Surame"/>
+                </DataTable>
+                <Button label="Remove Selected Employee" onClick={()=>this.removeEmployees()}/>
+                <Button label="Add Employee" onClick={()=>this.listAllEmployees()}/>
+            </Dialog>
+
+            <Dialog visible={this.state.displayAllEmployeeDialog} modal={true} onHide={()=>this.setState({displayAllEmployeeDialog: false})} heigt={"100px"}>
+                <MultiSelect value={this.state.newEmployees} options={this.allEmployees.map(e => ({label: e.name + e.surname, value: e}))}
+                             onChange={e => this.setState({newEmployees: e.value})}/>
+                <Button label="Add" onClick={() => this.addEmployees()}/>
+            </Dialog>
+
         </div>);
     }
 
