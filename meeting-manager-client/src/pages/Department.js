@@ -104,6 +104,7 @@ export default class Department extends React.Component{
 
     addEmployees(){
         let employees=this.state.employees;
+        if(!this.state.newEmployees) return;
         this.state.newEmployees.forEach( ne =>
             DepApi.addEmployee(this.state.dep.id, ne.id).end((err, res) => {
                 if(employees.every((elem, index, array) => elem.id != ne.id)) employees.push(ne);
@@ -115,6 +116,7 @@ export default class Department extends React.Component{
 
     removeEmployees(){
         let employees=this.state.selectedEmployees;
+        if(!employees) return;
         employees.forEach(e => DepApi.removeEmployee(this.state.dep.id, e.id).end((err, res) =>{
             let i = this.state.employees.indexOf(e);
             this.setState({employees: this.state.employees.filter(emp => emp.id != e.id)});
@@ -142,7 +144,7 @@ export default class Department extends React.Component{
                 <Column field="description" header="Description" sortable={false} />
             </DataTable>
 
-            <Dialog visible={this.state.displayDialog} header="Dep Details" modal={true} footer={dialogFooter} onHide={() => this.setState({displayDialog: false})}>
+            <Dialog visible={this.state.displayDialog} header="Department Details" modal={true} footer={dialogFooter} onHide={() => this.setState({displayDialog: false})}>
                 {this.state.dep && <div className="ui-grid ui-grid-responsive ui-fluid">
                     <div className="ui-grid-row">
                         <div className="ui-grid-col-4" style={{padding:'4px 10px'}}><label htmlFor="name">Name</label></div>
@@ -166,7 +168,8 @@ export default class Department extends React.Component{
                 </div>}
             </Dialog>
 
-            <Dialog visible={this.state.displayMyEmployeeDialog} modal={true} onHide={() => this.setState({displayMyEmployeeDialog: false})}>
+            <Dialog visible={this.state.displayMyEmployeeDialog} modal={true} onHide={() => this.setState({displayMyEmployeeDialog: false})}
+                    header="Members of the Department">
                 <DataTable value={this.state.employees} selectionMode="multiple" selection={this.state.selectedEmployees}
                            onSelectionChange={(e) => this.setState({selectedEmployees: e.data})}>
                     <Column field="name" header="Name"/>
@@ -176,7 +179,8 @@ export default class Department extends React.Component{
                 <Button label="Add Employee" onClick={()=>this.listAllEmployees()}/>
             </Dialog>
 
-            <Dialog visible={this.state.displayAllEmployeeDialog} modal={true} onHide={()=>this.setState({displayAllEmployeeDialog: false})} heigt={"100px"}>
+            <Dialog visible={this.state.displayAllEmployeeDialog} modal={true} onHide={()=>this.setState({displayAllEmployeeDialog: false})}
+                    heigt={"100px"} header="Include an Employee to the Department">
                 <MultiSelect value={this.state.newEmployees} options={this.allEmployees.map(e => ({label: e.name + " " + e.surname, value: e}))}
                              onChange={e => this.setState({newEmployees: e.value})}/>
                 <Button label="Add" onClick={() => this.addEmployees()}/>
