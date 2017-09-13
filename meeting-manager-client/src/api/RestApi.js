@@ -63,4 +63,16 @@ export class MeetingApi extends CRUDApi{
         super(baseurl+"/meeting");
     }
 
+    listDepartments(id){
+        return request.get(this.url+"/"+id+"/department/");
+    }
+
+    addDepartment(mid, did){
+        return request.put(this.url+"/"+mid+"/department/"+did);
+    }
+
+    removeDepartment(mid, did){
+        return request.delete(this.url+"/"+mid+"/employee/"+did);
+    }
+
 }
