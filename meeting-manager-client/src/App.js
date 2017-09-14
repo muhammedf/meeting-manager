@@ -14,7 +14,9 @@ class App extends Component {
   render() {
     return (
         <div>
-            <SideMenu/>
+            <div id="menu">
+                <SideMenu/>
+            </div>
             <div className="ui-g-3"></div>
             <div className="ui-g-6">
                 <Switch>
@@ -34,22 +36,14 @@ export default App;
 function SideMenu(propes) {
     return (
         <ul>
-            <Link to = "/index">
-        <li>index</li>
-            </Link>
-            <Link to = "/meeting">
-                <li>meeting</li>
-            </Link>
-            <Link to = "/department">
-        <li>department</li>
-            </Link>
-            <Link to = "/employee">
-        <li>employee</li>
-            </Link>
+            <li><Link to="index">Home</Link></li>
+            <li><Link to="meeting">Meetings</Link></li>
+            <li><Link to="department">Departments</Link></li>
+            <li><Link to="employee">Employees</Link></li>
         </ul>
     );
 }
 
 function Index(props) {
-    return <h1>INDEX</h1>;
+    return <h1>Welcome To Meeing Manager!</h1>;
 }
