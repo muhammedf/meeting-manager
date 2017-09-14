@@ -13,18 +13,18 @@ A very basic meeting app.
 * **Assertj**
 
 ### RESTful Api
-* GET to "/{domain}/{id}": Returns the entity that id represents.
-* POST to "/{domain}/": Creates entity with the submitted data.
-* PUT to "/{domain}/{id}": Updates the entity that id represents with the submitted data.
-* DELETE to "/{domain}/{id}": Deletes the entity that id represents.
-* GET to "/{domain}/": Returns all entities for related domain.
+* `GET` to `/{domain}/{id}`: Returns the entity that id represents.
+* `POST` to `/{domain}/`: Creates entity with the submitted data.
+* `PUT` to `/{domain}/{id}`: Updates the entity that id represents with the submitted data.
+* `DELETE` to `/{domain}/{id}`: Deletes the entity that id represents.
+* `GET` to `/{domain}/`: Returns all entities for related domain.
 
 domanin = meeting, department, employee
 
 
-* PUT to "/{domain}/{id}/{secondarydomain}/{id2}": Adds the entity that id2 represents to the entity that id represents as relation.
-* DELETE to "/{domain}/{id}/{secondarydomain}/{id2}": Removes the entity that id2 represents from the entity that id represents as relation.
-* GET to "/{domain}/{id}/{secondardomain}/": Returns all relational entities for related domain and secondarydomain.
+* `PUT` to `/{domain}/{id}/{secondarydomain}/{id2}`: Adds the entity that id2 represents to the entity that id represents as relation.
+* `DELETE` to `/{domain}/{id}/{secondarydomain}/{id2}`: Removes the entity that id2 represents from the entity that id represents as relation.
+* `GET` to `/{domain}/{id}/{secondardomain}/`: Returns all relational entities for related domain and secondarydomain.
 
 domain == meeting and then secondarydomain = department
 
