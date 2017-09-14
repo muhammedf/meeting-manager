@@ -1,6 +1,5 @@
 package muhammedf.controller;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import muhammedf.model.Department;
 import muhammedf.model.Meeting;
 import muhammedf.repositories.DepartmentRepository;
@@ -11,9 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.OptimisticLockException;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.UriBuilder;
 
 import static org.springframework.http.ResponseEntity.*;
 

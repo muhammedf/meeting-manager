@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.core.MediaType;
 
-import java.util.List;
-
 import static org.springframework.http.ResponseEntity.*;
 
 @CrossOrigin(origins = "*")

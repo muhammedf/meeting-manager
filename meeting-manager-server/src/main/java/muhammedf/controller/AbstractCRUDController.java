@@ -20,7 +20,7 @@ public abstract class AbstractCRUDController<T extends Identity, ID extends Seri
     public ResponseEntity create(T entity) {
         getRepository().save(entity);
         return created(UriBuilder.fromPath(getPath())
-                .path(String.valueOf(entity.getId())).build()).build();
+                .path(String.valueOf(entity.getId())).build()).body(entity.getId());
     }
 
     @Override
