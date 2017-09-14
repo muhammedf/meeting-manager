@@ -68,7 +68,6 @@ public abstract class BaseCRUDController<T extends Identity, ID extends Serializ
             return notFound().build();
         }
         try {
-            System.out.println("before save");
             entity = getRepository().save(entity);
         }catch (OptimisticLockException e){
             return status(HttpStatus.CONFLICT).build();
