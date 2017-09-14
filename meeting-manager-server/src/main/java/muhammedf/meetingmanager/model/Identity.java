@@ -1,4 +1,4 @@
-package muhammedf.model;
+package muhammedf.meetingmanager.model;
 
 public interface Identity <ID> {
     public ID getId();

@@ -1,9 +1,9 @@
-package muhammedf.controller;
+package muhammedf.meetingmanager.controller;
 
-import muhammedf.model.Department;
-import muhammedf.model.Employee;
-import muhammedf.repositories.DepartmentRepository;
-import muhammedf.repositories.EmployeeRepository;
+import muhammedf.meetingmanager.model.Department;
+import muhammedf.meetingmanager.model.Employee;
+import muhammedf.meetingmanager.repositories.DepartmentRepository;
+import muhammedf.meetingmanager.repositories.EmployeeRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;

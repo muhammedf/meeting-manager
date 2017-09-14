@@ -1,9 +1,9 @@
-package muhammedf.controller;
+package muhammedf.meetingmanager.controller;
 
-import muhammedf.model.Meeting;
-import muhammedf.model.Department;
-import muhammedf.repositories.DepartmentRepository;
-import muhammedf.repositories.MeetingRepository;
+import muhammedf.meetingmanager.model.Meeting;
+import muhammedf.meetingmanager.model.Department;
+import muhammedf.meetingmanager.repositories.DepartmentRepository;
+import muhammedf.meetingmanager.repositories.MeetingRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

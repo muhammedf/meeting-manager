@@ -1,6 +1,6 @@
-package muhammedf.controller;
+package muhammedf.meetingmanager.controller;
 
-import muhammedf.model.Identity;
+import muhammedf.meetingmanager.model.Identity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

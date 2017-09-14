@@ -1,9 +1,8 @@
-package muhammedf.model;
+package muhammedf.meetingmanager.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-import muhammedf.model.Department;
 import java.util.Set;
 import java.util.HashSet;
 import javax.xml.bind.annotation.XmlRootElement;

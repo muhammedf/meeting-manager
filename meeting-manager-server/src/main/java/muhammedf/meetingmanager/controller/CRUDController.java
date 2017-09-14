@@ -1,4 +1,4 @@
-package muhammedf.controller;
+package muhammedf.meetingmanager.controller;
 
 import org.springframework.http.ResponseEntity;
 

@@ -1,8 +1,7 @@
-package muhammedf.controller;
+package muhammedf.meetingmanager.controller;
 
-import muhammedf.model.Department;
-import muhammedf.model.Employee;
-import muhammedf.model.Identity;
+import muhammedf.meetingmanager.model.Employee;
+import muhammedf.meetingmanager.model.Identity;
 import org.junit.Test;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.http.HttpStatus;

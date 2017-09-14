@@ -1,9 +1,9 @@
-package muhammedf.controller;
+package muhammedf.meetingmanager.controller;
 
-import muhammedf.model.Department;
-import muhammedf.model.Employee;
-import muhammedf.repositories.DepartmentRepository;
-import muhammedf.repositories.EmployeeRepository;
+import muhammedf.meetingmanager.model.Department;
+import muhammedf.meetingmanager.model.Employee;
+import muhammedf.meetingmanager.repositories.DepartmentRepository;
+import muhammedf.meetingmanager.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.http.HttpStatus;

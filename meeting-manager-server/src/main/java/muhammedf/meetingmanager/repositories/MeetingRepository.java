@@ -1,6 +1,6 @@
-package muhammedf.repositories;
+package muhammedf.meetingmanager.repositories;
 
-import muhammedf.model.Meeting;
+import muhammedf.meetingmanager.model.Meeting;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface MeetingRepository

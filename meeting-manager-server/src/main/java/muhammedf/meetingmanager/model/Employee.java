@@ -1,4 +1,4 @@
-package muhammedf.model;
+package muhammedf.meetingmanager.model;
 
 import javax.persistence.Entity;
 import java.io.Serializable;
