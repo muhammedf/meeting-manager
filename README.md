@@ -53,8 +53,13 @@ H2 is embedded and runs in cache. If you don't want to lose your data when serve
 * **PrimeReact**
 * **FontAwesome**
 * **SuperAgent**
+* **npm**
 
 ### Setting Up
+
+First:
+
+    npm install
 
 To run the app in development mode:
 
