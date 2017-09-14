@@ -16,12 +16,41 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 
+/**
+ * Base class for common CRUD operation tests.
+ * @param <T> the type of the entity that controller manages.
+ * @param <ID> the type of the id of the entity that controller manages.
+ */
 public abstract class BaseCRUDControllerTest<T extends Identity, ID extends Serializable> {
 
+    /**
+     *
+     * @return the controller that will be tested.
+     */
     public abstract BaseCRUDController getController();
+
+    /**
+     *
+     * @return the repository that will be mocked.
+     */
     public abstract CrudRepository getRepository();
+
+    /**
+     *
+     * @return the class of the type of the entity.
+     */
     public abstract Class<T> getTClass();
+
+    /**
+     *
+     * @return new instance of the entity.
+     */
     public abstract T getNewTInstance();
+
+    /**
+     *
+     * @return new instance in the type of the entity's id.
+     */
     public abstract ID getNewIDInstance();
 
     @Test
