@@ -1,9 +1,9 @@
 # meeting-manager
 A very basic meeting app.
 
-##[Server Side](https://github.com/muhammedf/meeting-manager/tree/master/meeting-manager-server)
+## [Server Side](https://github.com/muhammedf/meeting-manager/tree/master/meeting-manager-server)
 
-###Used Technologies
+### Used Technologies
 * **Spring Boot**
 * **RESTful**
 * **JPA (Hibernate)**
@@ -12,7 +12,7 @@ A very basic meeting app.
 * **Mockito**
 * **Assertj**
 
-###RESTful Api
+### RESTful Api
 * GET to "/{domain}/{id}": Returns the entity that id represents.
 * POST to "/{domain}/": Creates entity with the submitted data.
 * PUT to "/{domain}/{id}": Updates the entity that id represents with the submitted data.
@@ -31,7 +31,7 @@ domain == meeting and then secondarydomain = department
 domain == department and then secondarydomain = emmployee
 
 
-###Setting Up
+### Setting Up
 Run this command:
 
     mvn spring-boot:run
@@ -45,16 +45,16 @@ To run tests:
 H2 is embedded and runs in cache. If you don't want to lose your data when server shuts down, configure application to your needs.
 
 
-##[Client Side](https://github.com/muhammedf/meeting-manager/tree/master/meeting-manager-client)
+## [Client Side](https://github.com/muhammedf/meeting-manager/tree/master/meeting-manager-client)
 
-###Used Technologies
+### Used Technologies
 
 * **React**
 * **PrimeReact**
 * **FontAwesome**
 * **SuperAgent**
 
-###Setting Up
+### Setting Up
 
 To run the app in development mode:
 
