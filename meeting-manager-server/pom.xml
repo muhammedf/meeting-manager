@@ -7,8 +7,8 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>meeting-manager</name>
+	<description>A very basic meeting app.</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
