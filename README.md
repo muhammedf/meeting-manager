@@ -10,7 +10,7 @@ A very basic meeting app.
 * **Maven**
 * **H2**
 * **Mockito**
-* **Assertj**
+* **AssertJ**
 
 ### RESTful Api
 * `GET` to `/{domain}/{id}`: Returns the entity that id represents.
