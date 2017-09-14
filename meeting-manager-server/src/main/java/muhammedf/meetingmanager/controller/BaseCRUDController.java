@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 import static org.springframework.http.ResponseEntity.*;
 
-public abstract class AbstractCRUDController<T extends Identity, ID extends Serializable> implements CRUDController<T,ID> {
+public abstract class BaseCRUDController<T extends Identity, ID extends Serializable> implements CRUDController<T,ID> {
 
     public abstract CrudRepository<T, ID> getRepository();
     public abstract String getPath();

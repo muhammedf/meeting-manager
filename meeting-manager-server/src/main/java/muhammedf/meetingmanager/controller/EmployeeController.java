@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/employee")
-public class EmployeeController extends AbstractCRUDController {
+public class EmployeeController extends BaseCRUDController {
 
     public CrudRepository<Employee, Long> getRepository(){
         return er;

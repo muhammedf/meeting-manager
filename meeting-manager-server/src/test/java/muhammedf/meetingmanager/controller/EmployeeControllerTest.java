@@ -11,16 +11,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class EmployeeControllerTest extends AbstractCRUDControllerTest<Employee, Long> {
+public class EmployeeControllerTest extends BaseCRUDControllerTest<Employee, Long> {
 
     @InjectMocks
-    private EmployeeController ec;
+    private BaseCRUDController ec;
 
     @Mock
     private EmployeeRepository er;
 
     @Override
-    public AbstractCRUDController getController() {
+    public BaseCRUDController getController() {
         return ec;
     }
 

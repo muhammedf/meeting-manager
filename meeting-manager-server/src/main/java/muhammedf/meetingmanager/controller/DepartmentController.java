@@ -17,7 +17,7 @@ import static org.springframework.http.ResponseEntity.*;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/department")
-public class DepartmentController extends AbstractCRUDController<Department, Long> {
+public class DepartmentController extends BaseCRUDController<Department, Long> {
 
     public CrudRepository<Department, Long> getRepository(){
         return dr;

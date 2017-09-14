@@ -24,7 +24,7 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MeetingControllerTest extends AbstractCRUDControllerTest<Meeting, Long> {
+public class MeetingControllerTest extends BaseCRUDControllerTest<Meeting, Long> {
 
     @InjectMocks
     private MeetingController mc;
@@ -36,7 +36,7 @@ public class MeetingControllerTest extends AbstractCRUDControllerTest<Meeting, L
     private DepartmentRepository dr;
 
     @Override
-    public AbstractCRUDController getController() {
+    public BaseCRUDController getController() {
         return mc;
     }
 

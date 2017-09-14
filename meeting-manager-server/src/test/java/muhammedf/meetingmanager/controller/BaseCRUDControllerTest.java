@@ -16,9 +16,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 
-public abstract class AbstractCRUDControllerTest <T extends Identity, ID extends Serializable> {
+public abstract class BaseCRUDControllerTest<T extends Identity, ID extends Serializable> {
 
-    public abstract AbstractCRUDController getController();
+    public abstract BaseCRUDController getController();
     public abstract CrudRepository getRepository();
     public abstract Class<T> getTClass();
     public abstract T getNewTInstance();

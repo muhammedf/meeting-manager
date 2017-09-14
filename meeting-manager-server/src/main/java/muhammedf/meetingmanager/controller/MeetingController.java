@@ -17,7 +17,7 @@ import static org.springframework.http.ResponseEntity.*;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/meeting")
-public class MeetingController extends AbstractCRUDController<Meeting, Long> {
+public class MeetingController extends BaseCRUDController<Meeting, Long> {
 
     public CrudRepository<Meeting, Long> getRepository(){
         return mr;
