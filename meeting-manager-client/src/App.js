@@ -8,7 +8,7 @@ import Employee from "./pages/Employee"
 import Department from "./pages/Department"
 import Meeting from "./pages/Meeting"
 
-import {Route, Link, Switch} from "react-router-dom"
+import {Route, Link, Switch, Redirect} from "react-router-dom"
 
 class App extends Component {
   render() {
@@ -24,6 +24,7 @@ class App extends Component {
                     <Route path = "/meeting" component ={Meeting}/>
                     <Route path = "/department" component ={Department}/>
                     <Route path = "/employee" component ={Employee}/>
+                    <Redirect from="/" to="index" />
                 </Switch>
             </div>
         </div>
