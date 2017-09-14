@@ -1,4 +1,4 @@
-package muhammedf;
+package muhammedf.meetingmanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class DemoApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Bean
