@@ -45,5 +45,5 @@ function SideMenu(propes) {
 }
 
 function Index(props) {
-    return <h1>Welcome To Meeing Manager!</h1>;
+    return <h1>Welcome To Meeting Manager!</h1>;
 }
