@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class EmployeeControllerTest extends BaseCRUDControllerTest<Employee, Long> {
 
     @InjectMocks
-    private BaseCRUDController ec;
+    private EmployeeController ec;
 
     @Mock
     private EmployeeRepository er;
