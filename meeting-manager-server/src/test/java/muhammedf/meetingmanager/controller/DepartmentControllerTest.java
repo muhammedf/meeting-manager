@@ -55,6 +55,9 @@ public class DepartmentControllerTest extends BaseCRUDControllerTest<Department,
         return new Department();
     }
 
+    /**
+     * keeping for to return different distance on every call to {@link #getNewIDInstance()}
+     */
     private Long lastInstance=0l;
 
     @Override

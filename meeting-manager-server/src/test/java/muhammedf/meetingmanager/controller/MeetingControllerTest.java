@@ -55,6 +55,9 @@ public class MeetingControllerTest extends BaseCRUDControllerTest<Meeting, Long>
         return new Meeting();
     }
 
+    /**
+     * keeping for to return different distance on every call to {@link #getNewIDInstance()}
+     */
     private Long lastInstance = 0l;
 
     @Override
