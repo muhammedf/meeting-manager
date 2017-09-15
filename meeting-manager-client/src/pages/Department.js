@@ -180,10 +180,16 @@ export default class Department extends React.Component{
             </Dialog>
 
             <Dialog visible={this.state.displayAllEmployeeDialog} modal={true} onHide={()=>this.setState({displayAllEmployeeDialog: false})}
-                    heigt={"100px"} header="Include an Employee to the Department">
-                <MultiSelect value={this.state.newEmployees} options={this.allEmployees.map(e => ({label: e.name + " " + e.surname, value: e}))}
-                             onChange={e => this.setState({newEmployees: e.value})}/>
-                <Button label="Add" onClick={() => this.addEmployees()}/>
+                    header="Include Employees to the Department">
+                <div className="ui-grid-row ui-fluid" style={({minHeight: "100px"})}>
+                    <div className="ui-grid-col-6">
+                        <MultiSelect value={this.state.newEmployees} options={this.allEmployees.map(e => ({label: e.name + " " + e.surname, value: e}))}
+                                 onChange={e => this.setState({newEmployees: e.value})}/>
+                    </div>
+                    <div className="ui-grid-col-6">
+                        <Button label="Add" onClick={() => this.addEmployees()}/>
+                    </div>
+                </div>
             </Dialog>
 
         </div>);

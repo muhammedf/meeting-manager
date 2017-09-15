@@ -181,9 +181,15 @@ export default class Meeting extends React.Component{
 
             <Dialog visible={this.state.displayAllDepartmentDialog} modal={true} onHide={()=>this.setState({displayAllDepartmentDialog: false})}
                     heigt={"100px"} header="Invite Other Departments">
-                <MultiSelect value={this.state.newDepartments} options={this.allDepartments.map(e => ({label: e.name, value: e}))}
+                <div className="ui-grid-row ui-fluid" style={({minHeight: "100px"})}>
+                    <div className="ui-grid-col-6">
+                        <MultiSelect value={this.state.newDepartments} options={this.allDepartments.map(e => ({label: e.name, value: e}))}
                              onChange={e => this.setState({newDepartments: e.value})}/>
-                <Button label="Add" onClick={() => this.addDepartments()}/>
+                    </div>
+                    <div className="ui-grid-col-6">
+                        <Button label="Add" onClick={() => this.addDepartments()}/>
+                    </div>
+                </div>
             </Dialog>
 
         </div>);
